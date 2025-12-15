@@ -154,6 +154,7 @@ public class SignalController implements CommandResponder {
         //snmp oluştur ve haberleşme protokolünü belirle (v1,v2c..)
         snmp = new Snmp(transport);
         snmp.getMessageDispatcher().addMessageProcessingModel(new MPv2c());
+        //addCommandResponder, snmp paketi gelirse bu sınıfta karşılanacagı garanti eder
         snmp.addCommandResponder(this);
         transport.listen();
     }
