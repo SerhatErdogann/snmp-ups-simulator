@@ -210,7 +210,7 @@ public class SignalController {
 
     private String snmpGet(String oid) {
         try {
-            //response için protokol duzenlemesi
+            //request için protokol duzenlemesi
             CommunityTarget<UdpAddress> target = new CommunityTarget<>();
             target.setCommunity(new OctetString(community));
             target.setAddress(new UdpAddress(upsIp + "/161"));
